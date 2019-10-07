@@ -1,0 +1,22 @@
+<form action="/shoes" method="POST">
+    <fieldset>
+        <legend>New Shoe</legend>
+
+        <!-- NAME -->
+        <p>
+            <label for="shoe-name">Name</label><br>
+            <input id="shoe-name" type="text" name="name" value="{{ shoe.name }}">
+        </p>
+
+        <!-- PRICE -->
+        <p>
+            <label for="shoe-price">Price</label><br>
+            <input id="shoe-price" type="text" name="price" value="{{ shoe.price }}">
+        </p>
+        
+    </fieldset>
+
+    <p>
+        <button type="submit">Add shoe</button>
+    </p>
+</form>

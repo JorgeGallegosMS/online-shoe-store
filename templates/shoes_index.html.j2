@@ -1,5 +1,5 @@
 <h1>Online shoe store</h1>
 {% for shoe in shoes %}
-<h2>{{ shoe.name }}</h2>
+<h2><a href="/shoes/{{ shoe._id }}">{{ shoe.name }}</a></h2>
 <h3>{{ shoe.price }}</h3>
 {% endfor %}
