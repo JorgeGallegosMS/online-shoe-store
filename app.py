@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-host = os.environ.get('MONGODB_URI')
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/online-shoe-store')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 # REMOVE
@@ -68,3 +68,6 @@ def shoes_delete(shoe_id):
     """Remove a shoe"""
     shoes.delete_one({'_id': ObjectId(shoe_id)})
     return redirect(url_for('shoes_index'))
+
+if __name__ == '__main__':
+    app.run(debug=True)
