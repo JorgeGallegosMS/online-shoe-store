@@ -1,3 +1,21 @@
+{% extends 'base.html.j2' %}
+
+{% block content %}
+<a href="/">Home</a>
+
 <h1>{{ shoe.name }}</h1>
 
 <h2>{{ shoe.price }}</h2>
+
+<img height="300" width="300" src="{{ shoe.image_url }}" alt="A shoe">
+
+<p>
+    {{ shoe.description }}
+</p>
+
+<a href="/shoes/{{ shoe._id }}/edit"><button>Edit</button></a>
+<form action="/shoes/{{ shoe._id }}/delete" method="POST">
+    <button>Delete</button>
+</form>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+<fieldset>
+        <legend>{{ title }}</legend>
+
+        <!-- NAME -->
+        <p>
+            <label for="shoe-name">Name</label><br>
+            <input id="shoe-name" type="text" name="name" value="{{ shoe.name }}">
+        </p>
+
+        <!-- PRICE -->
+        <p>
+            <label for="shoe-price">Price</label><br>
+            <input id="shoe-price" type="text" name="price" value="{{ shoe.price }}">
+        </p>
+
+        <!-- IMAGE URL -->
+        <p>
+            <label for="image_url">Image URL</label><br>
+            <input id="image_url" type="text" name="image_url" value="{{ shoe.image_url }}">
+        </p>
+
+        <!-- DESCRIPTION -->
+        <label for="description">Description</label><br>
+        <textarea name="description" id="description" cols="30" rows="10">{{ shoe.description }}</textarea>
+        
+    </fieldset>

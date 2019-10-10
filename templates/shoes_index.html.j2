@@ -1,5 +1,19 @@
-<h1>Online shoe store</h1>
-{% for shoe in shoes %}
-<h2><a href="/shoes/{{ shoe._id }}">{{ shoe.name }}</a></h2>
-<h3>{{ shoe.price }}</h3>
-{% endfor %}
+{% extends 'base.html.j2' %}
+
+{% block content %}
+    <h1>Online shoe store</h1>
+    <h2>
+        <a href="/shoes/new">Create Shoe</a>
+    </h2>
+    <div class="container">
+        <div class="row">
+            {% for shoe in shoes %}
+            <a href="/shoes/{{ shoe._id }}"><img src="{{ shoe.image_url }}" height="250" width="250" alt="A shoe"></a>
+            <h4>{{ shoe.price }}</h4>
+
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
